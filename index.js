@@ -13,6 +13,7 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   function(res) {
     console.log(res);
+    return res
   },
   function(error) {
     console.log(error);
@@ -23,8 +24,7 @@ console.log(axios.prototype);
 
 
 console.log('请求开始前的准备个工作');
-axios
-  .get(
+axios.Axios.prototype.request(
     'https://www.easy-mock.com/mock/5afc389de5c64d22cc1ca565/data/react-native-mock-one'
   )
   .then(res => {
